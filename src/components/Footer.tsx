@@ -12,7 +12,7 @@ export default function Footer2() {
           <Socials />
         </div>
         <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{SITE.author}</div>
+          <div>{SITE.author.name}</div>
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>

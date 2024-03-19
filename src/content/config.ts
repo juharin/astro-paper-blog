@@ -5,7 +5,7 @@ const blog = defineCollection({
   type: "content",
   schema: ({ image }) =>
     z.object({
-      author: z.string().default(SITE.author),
+      author: z.string().default(SITE.author.name),
       pubDatetime: z.date(),
       modDatetime: z.date().optional().nullable(),
       title: z.string(),
