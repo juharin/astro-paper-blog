@@ -1,3 +1,6 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
+
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
@@ -18,6 +21,18 @@ module.exports = {
     },
 
     extend: {
+      spacing: {
+        '9/16': '56.25%',
+      },
+      lineHeight: {
+        11: '2.75rem',
+        12: '3rem',
+        13: '3.25rem',
+        14: '3.5rem',
+      },
+      colors: {
+        primary: colors.neutral,
+      },
       textColor: {
         skin: {
           base: withOpacity("--color-text-base"),
@@ -32,6 +47,7 @@ module.exports = {
           inverted: withOpacity("--color-text-base"),
           card: withOpacity("--color-card"),
           "card-muted": withOpacity("--color-card-muted"),
+          "accent-hover": withOpacity("--color-accent-hover"),
         },
       },
       outlineColor: {
@@ -54,6 +70,8 @@ module.exports = {
         transparent: "transparent",
       },
       fontFamily: {
+        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        serif: ["Lora", ...defaultTheme.fontFamily.serif],
         mono: ["IBM Plex Mono", "monospace"],
       },
 
@@ -71,5 +89,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require('@tailwindcss/forms'), require("@tailwindcss/typography")],
 };

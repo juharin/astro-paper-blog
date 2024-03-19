@@ -2,13 +2,18 @@ import type socialIcons from "@assets/socialIcons";
 
 export type Site = {
   website: string;
-  author: string;
+  author: Author;
   desc: string;
   title: string;
   ogImage?: string;
   lightAndDarkMode: boolean;
   postPerPage: number;
   scheduledPostMargin: number;
+  newsletter: Newsletter;
+};
+
+export type Newsletter = {
+  provider: string;
 };
 
 export type SocialObjects = {
@@ -17,3 +22,11 @@ export type SocialObjects = {
   active: boolean;
   linkTitle: string;
 }[];
+
+export type Author = {
+  name: string;
+  picture: string;
+  bio: string;
+  email: string;
+  //socials: SocialObjects;
+};

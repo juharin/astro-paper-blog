@@ -1,7 +1,6 @@
 ---
-import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
-
+import { SITE } from "@config";
 const currentYear = new Date().getFullYear();
 
 export interface Props {
@@ -12,13 +11,16 @@ const { noMarginTop = false } = Astro.props;
 ---
 
 <footer class={`${noMarginTop ? "" : "mt-auto"}`}>
-  <Hr noPadding />
-  <div class="footer-wrapper">
-    <Socials centered />
-    <div class="copyright-wrapper">
-      <span>Copyright &#169; {currentYear}</span>
-      <span class="separator">&nbsp;|&nbsp;</span>
-      <span>All rights reserved.</span>
+  <div class="my-16 flex flex-col items-center">
+    <div class="mb-3 flex space-x-4">
+      <Socials />
+    </div>
+    <div class="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
+      <div>{SITE.author}</div>
+      <div>{` • `}</div>
+      <div>{`© ${new Date().getFullYear()}`}</div>
+      <div>{` • `}</div>
+      <a href="/">{SITE.title}</a>
     </div>
   </div>
 </footer>

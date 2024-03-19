@@ -27,6 +27,11 @@ function reflectPreference() {
   document.firstElementChild.setAttribute("data-theme", themeValue);
 
   document.querySelector("#theme-btn")?.setAttribute("aria-label", themeValue);
+  document.querySelector("#logo")?.setAttribute("src", 
+    themeValue === "dark" ? 
+      "/assets/Ultrared-white-no-bg.svg" : 
+      "/assets/Ultrared-black-no-bg.svg"
+  )
 
   // Get a reference to the body element
   const body = document.body;
