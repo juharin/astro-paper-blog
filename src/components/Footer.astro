@@ -1,7 +1,7 @@
 ---
 import Socials from "./Socials.astro";
 import { SITE } from "@config";
-const currentYear = new Date().getFullYear();
+//const currentYear = new Date().getFullYear();
 
 export interface Props {
   noMarginTop?: boolean;
@@ -16,7 +16,7 @@ const { noMarginTop = false } = Astro.props;
       <Socials />
     </div>
     <div class="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-      <div>{SITE.author}</div>
+      <div>{SITE.author.name}</div>
       <div>{` • `}</div>
       <div>{`© ${new Date().getFullYear()}`}</div>
       <div>{` • `}</div>
